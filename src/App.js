@@ -1,12 +1,25 @@
-import React from 'react'
-import { Button } from 'antd'
+import React, { Component } from 'react'
+import { Row, Col } from 'antd'
+import Header from './components/Header'
+import NavLeft from './components/NavLeft'
+import Footer from './components/Footer'
 
-function App() {
-  return (
-    <div className="App">
-      <Button>按钮dev1</Button>
-    </div>
-  );
+import './style/common.less'
+export default class Admin extends Component {
+  render() {
+    return (
+      <div>
+        <Row className="container">
+          <Col span={4} className="nav-left">
+            <NavLeft />
+          </Col>
+          <Col span={20} className="main">
+            <Header />
+            <Row className="content">Content</Row>
+            <Footer />
+          </Col>
+        </Row>
+      </div>
+    )
+  }
 }
-
-export default App;
