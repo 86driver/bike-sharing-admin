@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MenuConfig from '../../config/menuConfig'
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
 import './index.less'
 
 const { SubMenu } = Menu;
@@ -27,10 +27,9 @@ export default class NavLeft extends Component {
       return <Menu.Item key={item.key}>{item.title}</Menu.Item>
     })
   }
-
   render() {
     return (
-      <div class="nav-left">
+      <div>
         <div className="logo">
           <img src="/assets/logo-ant.svg" alt="" />
           <h1>My-Admin</h1>
