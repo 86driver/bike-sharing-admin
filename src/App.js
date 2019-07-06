@@ -3,6 +3,7 @@ import { Row, Col } from 'antd'
 import Header from './components/Header'
 import NavLeft from './components/NavLeft'
 import Footer from './components/Footer'
+import 'normalize.css'
 
 import './style/common.less'
 export default class Admin extends Component {
