@@ -1,10 +1,21 @@
+@import '../style/default.less';
 
 .container{
-  display: flex;
   .nav-left{
     background-color: #001529;
     min-width: 180px;
     height: 100vh;
   }
-
+  .main{
+    background: @colorL;
+    .header{
+      background: @colorM;
+    }
+    .content{
+      background: @colorM;
+      margin: 20px;
+      border-radius: 5px;
+      height: 63vh;
+    }
+  }
 }
