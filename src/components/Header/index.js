@@ -48,7 +48,7 @@ export default class Header extends Component {
       <div className="header">
         <Row className="header-top">
           <Col span={24}>
-            <span>欢迎, {this.state.userName}</span>
+            <span>欢迎， {this.state.userName}</span>
             <a href="">退出</a>
           </Col>
         </Row>
