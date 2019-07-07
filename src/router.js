@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 import App from './App'
+import Home from "./pages/home"
 import Admin from './admin'
 import Login from './pages/login'
 import Buttons from './pages/ui/buttons/buttons'
@@ -17,10 +18,12 @@ export default class Router extends Component {
               <Route path="/" render={() =>
                 <Admin>
                   <Switch>
+                    <Route path="/home" component={Home} />
                     <Route path="/ui/buttons" component={Buttons} />
                     <Route component={NoMatch} />
                   </Switch>
-                </Admin>} />
+                </Admin>}>
+              </Route>
           </Switch>
         </App>
       </HashRouter>
