@@ -13,16 +13,6 @@ import NoMatch from './pages/no_match'
 export default class Router extends Component {
 
   render() {
-    const FormItemLayout = {
-      labelCol: {
-        xs: 24,
-        sm: 4
-      },
-      wrapperCol: {
-        xs: 24,
-        sm: 20
-      }
-    }
     return (
       <HashRouter>
         <App>
