@@ -9,6 +9,7 @@ import Modals from './pages/ui/modals'
 import FormLogin from './pages/form/login'
 import FormRegister from './pages/form/register'
 import NoMatch from './pages/no_match'
+import BasicTable from './pages/table/basicTable'
 
 export default class Router extends Component {
 
@@ -26,6 +27,7 @@ export default class Router extends Component {
                   <Route path="/ui/modals" component={Modals} />
                   <Route path="/form/login" component={FormLogin} />
                   <Route path="/form/reg" component={FormRegister} />
+                  <Route path="/table/basic" component={BasicTable} />
                   <Route component={NoMatch} />
                 </Switch>
               </Admin>}>
