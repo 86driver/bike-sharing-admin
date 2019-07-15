@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import { Card, Table } from 'antd'
+import { getTableList } from '../../axios/api'
 
 export default class BasicTable extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      dataSource: []
+      dataSource: [],
+      dataSource2: []
     }
   }
 
@@ -48,13 +50,20 @@ export default class BasicTable extends Component {
     this.setState({
       dataSource
     })
+
+    getTableList().then((res) => {
+      this.setState({
+        dataSource2: res.list
+      })
+    })
   }
 
   render() {
+
     const columns = [
       {
         title: 'id',
-        dataIndex: 'id'
+        dataIndex: 'id',
       },
       {
         title: '用户名',
@@ -90,6 +99,9 @@ export default class BasicTable extends Component {
       <div>
         <Card title="基础表格" >
           <Table bordered dataSource={this.state.dataSource} columns={columns} pagination={false}></Table>
+        </Card>
+        <Card title="动态数据渲染表格" style={{ margin: '10px' }} >
+          <Table bordered dataSource={this.state.dataSource2} columns={columns} pagination={false}></Table>
         </Card>
       </div>
     )
