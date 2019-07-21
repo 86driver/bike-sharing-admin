@@ -10,6 +10,7 @@ import FormLogin from './pages/form/login'
 import FormRegister from './pages/form/register'
 import NoMatch from './pages/no_match'
 import BasicTable from './pages/table/basicTable'
+import HighTable from './pages/table/highTable'
 
 export default class Router extends Component {
 
@@ -28,6 +29,7 @@ export default class Router extends Component {
                   <Route path="/form/login" component={FormLogin} />
                   <Route path="/form/reg" component={FormRegister} />
                   <Route path="/table/basic" component={BasicTable} />
+                  <Route path="/table/high" component={HighTable} />
                   <Route component={NoMatch} />
                 </Switch>
               </Admin>}>

@@ -66,7 +66,13 @@ export default class BasicTable extends Component {
       dataSource
     })
 
-    getTableList(this.pageParam.page).then((res) => {
+    this.getTableData()
+  }
+
+  getTableData = () => {
+    getTableList({
+      params: this.pageParam
+    }).then((res) => {
       let _this = this
       res.list.map((item, index) => {
         item.key = index
@@ -75,7 +81,7 @@ export default class BasicTable extends Component {
         dataSource2: res.list,
         pagination: Util.pagenation(res, (current) => {
           _this.pageParam.page = current
-          getTableList(this.pageParam.page)
+          this.getTableData()
         })
       })
     })
