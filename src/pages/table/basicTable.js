@@ -79,7 +79,7 @@ export default class BasicTable extends Component {
       })
       this.setState({
         dataSource2: res.list,
-        pagination: Util.pagenation(res, (current) => {
+        pagination: Util.pagination(res, (current) => {
           _this.pageParam.page = current
           this.getTableData()
         })

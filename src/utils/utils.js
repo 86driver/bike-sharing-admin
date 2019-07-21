@@ -7,7 +7,7 @@ export default {
       return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}  ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
     }
   },
-  pagenation(data, callback) {
+  pagination(data, callback) {
     return {
       onChange: (current) => {
         callback(current)

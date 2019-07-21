@@ -11,6 +11,7 @@ import FormRegister from './pages/form/register'
 import NoMatch from './pages/no_match'
 import BasicTable from './pages/table/basicTable'
 import HighTable from './pages/table/highTable'
+import City from './pages/city'
 
 export default class Router extends Component {
 
@@ -30,6 +31,7 @@ export default class Router extends Component {
                   <Route path="/form/reg" component={FormRegister} />
                   <Route path="/table/basic" component={BasicTable} />
                   <Route path="/table/high" component={HighTable} />
+                  <Route path="/city" component={City} />
                   <Route component={NoMatch} />
                 </Switch>
               </Admin>}>
