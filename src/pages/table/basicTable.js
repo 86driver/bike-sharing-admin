@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Card, Table, Radio } from 'antd'
 import { getTableList } from '../../axios/api'
-import { Record } from 'immutable';
+// import { Record } from 'immutable';
+import Util from '../../utils/utils'
 
 export default class BasicTable extends Component {
 
@@ -13,8 +14,13 @@ export default class BasicTable extends Component {
       selectedRowKeys: [],
       selectedItem: [],
       selectIds: [],
-      selectedRows: []
+      selectedRows: [],
+      pagination: '',
     }
+  }
+
+  pageParam = {
+    page: 1
   }
 
   componentDidMount() {
@@ -60,12 +66,17 @@ export default class BasicTable extends Component {
       dataSource
     })
 
-    getTableList().then((res) => {
+    getTableList(this.pageParam.page).then((res) => {
+      let _this = this
       res.list.map((item, index) => {
         item.key = index
       })
       this.setState({
-        dataSource2: res.list
+        dataSource2: res.list,
+        pagination: Util.pagenation(res, (current) => {
+          _this.pageParam.page = current
+          getTableList(this.pageParam.page)
+        })
       })
     })
   }
@@ -181,6 +192,10 @@ export default class BasicTable extends Component {
         <Card title="Mock-多选" style={{ margin: '10px' }} >
           <Table
             rowSelection={rowCheckSelection} dataSource={this.state.dataSource2} bordered columns={columns} pagination={false}></Table>
+        </Card>
+        <Card title="Mock-表格分页" style={{ margin: '10px' }} >
+          <Table
+            dataSource={this.state.dataSource2} bordered columns={columns} pagination={this.state.pagination} ></Table>
         </Card>
       </div>
     )
